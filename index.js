@@ -1,8 +1,7 @@
 var Botkit = require("botkit"),
     restify = require('restify');
 
-//var token = process.env.SLACK_TOKEN;
-var token = 'xoxb-21544447351-pM2CvckLcKU8qNRlOUPUKwnt';
+var token = process.env.SLACK_TOKEN;
 if (!token) {
   console.error('SLACK_TOKEN is required!')
   process.exit(1)
@@ -213,35 +212,3 @@ server.use(restify.gzipResponse());
 server.use(restify.bodyParser({ mapParams: false }));
 
 server.listen(process.env.PORT || 4444);
-//
-//function PING(REQUEST, RESPONSE, NEXT)
-//{
-//  RESPONSE.send(200, 'PONG');
-//  NEXT();
-//}
-//
-//function LOUDS(REQUEST, RESPONSE, NEXT)
-//{
-//  RESPONSE.send(LOUDBOT.THELOUDS());
-//  NEXT();
-//}
-//
-//function MESSAGE(REQUEST, RESPONSE, NEXT)
-//{
-//  if (TOKENS)
-//  {
-//    var IDX = TOKENS.indexOf(REQUEST.body.token);
-//    if (IDX === -1) return NEXT(new restify.ForbiddenError('NO LOUDS FOR YOU'));
-//  }
-//
-//  var WHAT;
-//  if (REQUEST.body.user_name !== 'slackbot')
-//    WHAT = LOUDBOT.LISTENUP(REQUEST.body);
-//
-//  if (WHAT)
-//    RESPONSE.json(200, { text: WHAT, channel: REQUEST.body.channel_name });
-//  else
-//    RESPONSE.send(200);
-//
-//  NEXT();
-//}
