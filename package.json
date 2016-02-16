@@ -10,7 +10,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "botkit": "0.0.5"
+    "botkit": "0.0.5",
+    "restify": "^4.0.4"
   },
   "engines": {
     "node": "4.2.3"
